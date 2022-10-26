@@ -52,7 +52,12 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div></div>
+      <div>
+        <p>
+          <MenuIcon className="h-6 mr-2" />
+          All
+        </p>
+      </div>
     </header>
   );
 };
