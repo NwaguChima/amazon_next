@@ -4,7 +4,7 @@ import Header from "../src/components/Header";
 import ProductFeed from "../src/components/ProductFeed";
 
 export default function Home({ products, wine }) {
-  console.log("products", products);
+  // console.log("products", products);
 
   return (
     <div className="bg-gray-100">
