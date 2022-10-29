@@ -49,7 +49,7 @@ const Product = ({ id, title, price, description, category, image }) => {
         </div>
       )}
 
-      <button>Add to Basket</button>
+      <button className="mt-auto button">Add to Basket</button>
     </div>
   );
 };
