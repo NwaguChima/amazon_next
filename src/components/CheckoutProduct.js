@@ -3,6 +3,7 @@ import Image from "next/image";
 import Currency from "react-currency-formatter";
 import React from "react";
 import { useDispatch } from "react-redux";
+import { addToBasket } from "../slices/basketSlice";
 
 const CheckoutProduct = ({
   id,
@@ -16,7 +17,20 @@ const CheckoutProduct = ({
 }) => {
   const dispatch = useDispatch();
 
-  const addItemToBasket = () => {};
+  const addItemToBasket = () => {
+    const product = {
+      id,
+      title,
+      price,
+      description,
+      category,
+      image,
+      rating,
+      hasPrime,
+    };
+
+    dispatch(addToBasket(product));
+  };
 
   return (
     <div className="grid grid-cols-5 ">
@@ -53,7 +67,9 @@ const CheckoutProduct = ({
         <button className="button" onClick={addItemToBasket}>
           Add to Basket
         </button>
-        <button className="button">Remove from Basket</button>
+        <button className="button" onClick={removeItemFromBasket}>
+          Remove from Basket
+        </button>
       </div>
     </div>
   );
