@@ -3,11 +3,9 @@ import Banner from "../src/components/Banner";
 import Header from "../src/components/Header";
 import ProductFeed from "../src/components/ProductFeed";
 
-export default function Home({ products, wine }) {
-  // console.log("products", products);
-
+export default function Home({ products }) {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-200">
       <Head>
         <title>Amazon 2.0</title>
       </Head>
