@@ -4,10 +4,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import CheckoutProduct from "../components/CheckoutProduct";
 import Header from "../components/Header";
-import { selectItems } from "../slices/basketSlice";
+import Currency from "react-currency-formatter";
+import { selectItems, selectTotal } from "../slices/basketSlice";
 
 const Checkout = () => {
   const items = useSelector(selectItems);
+  const total = useSelector(selectTotal);
   const { data: session } = useSession();
 
   return (
@@ -48,13 +50,13 @@ const Checkout = () => {
         </div>
 
         {/* right */}
-        <div>
+        <div className="flex flex-col bg-white p-10 shadow-md">
           {items.length > 0 && (
             <>
               <h2 className="whitespace-nowrap">
-                Subtotal {items.length} items:
+                Subtotal {items.length} items:{" "}
                 <span className="font-bold">
-                  {/* <Currency quantity={total} currency="NGN" /> */}
+                  <Currency quantity={total} currency="NGN" />
                 </span>
               </h2>
 
