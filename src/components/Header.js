@@ -10,11 +10,11 @@ const Header = () => {
   return (
     <header>
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
-        <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
+        <div className="mt-2 flex items-center flex-grow sm:flex-grow-0 sm:mr-4">
           <Image
             src="https://links.papareact.com/f90"
-            width={150}
-            height={40}
+            width={110}
+            height={30}
             objectfit="contain"
             className="cursor-pointer"
           />
@@ -52,7 +52,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white">
+      <div className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white text-sm">
         <p className="link flex items-center">
           <MenuIcon className="h-6 mr-2" />
           All
