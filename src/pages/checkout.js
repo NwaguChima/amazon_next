@@ -29,11 +29,19 @@ const Checkout = () => {
                 : "Shopping Basket"}
             </h1>
 
-            {
-                items.map((item, i) => (
-                    <CheckoutProduct />
-                )
-            }
+            {items.map((item, i) => (
+              <CheckoutProduct
+                key={i}
+                id={item.id}
+                title={item.title}
+                price={item.price}
+                description={item.description}
+                category={item.category}
+                image={item.image}
+                hasPrime={item.hasPrime}
+                rating={item.rating}
+              />
+            ))}
           </div>
         </div>
 
