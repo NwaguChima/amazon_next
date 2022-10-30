@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import Currency from "react-currency-formatter";
 import { selectItems, selectTotal } from "../slices/basketSlice";
 import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
 
 const stripePromise = loadStripe(process.env.stripe_public_key);
 
@@ -19,6 +20,10 @@ const Checkout = () => {
     const stripe = await stripePromise;
 
     // Call the backend to create a checkout session...
+    const checkoutSession = await axios.post("/api/create-checkout-session", {
+      items,
+      email: session.user.email,
+    });
   };
 
   return (
