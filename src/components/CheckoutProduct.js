@@ -3,7 +3,7 @@ import Image from "next/image";
 import Currency from "react-currency-formatter";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addToBasket } from "../slices/basketSlice";
+import { addToBasket, removeFromBasket } from "../slices/basketSlice";
 
 const CheckoutProduct = ({
   id,
@@ -30,6 +30,10 @@ const CheckoutProduct = ({
     };
 
     dispatch(addToBasket(product));
+  };
+
+  const removeItemFromBasket = () => {
+    dispatch(removeFromBasket({ id }));
   };
 
   return (
