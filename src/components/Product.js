@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 import Currency from "react-currency-formatter";
 import { useDispatch } from "react-redux";
+import { addToBasket } from "../slices/basketSlice";
 
 const MAX_RATING = 5;
 const MIN_RATING = 1;
@@ -33,10 +34,7 @@ const Product = ({ id, title, price, description, category, image }) => {
     };
 
     // Send the product as an action to the REDUX store... the basket slice
-    dispatch({
-      type: "ADD_TO_BASKET",
-      item: product,
-    });
+    dispatch(addToBasket(product));
   };
 
   return (
