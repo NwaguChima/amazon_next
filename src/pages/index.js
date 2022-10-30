@@ -24,9 +24,15 @@ export default function Home({ products }) {
 }
 
 export async function getServerSideProps(context) {
-  const products = await fetch("https://fakestoreapi.com/products").then(
-    (res) => res.json()
+  let products = await fetch("https://fakestoreapi.com/products").then((res) =>
+    res.json()
   );
+
+  // multiply product price by 100 to convert to cents
+  products = products.map((product) => ({
+    ...product,
+    price: product.price * 100,
+  }));
 
   return {
     props: {
