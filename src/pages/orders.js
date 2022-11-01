@@ -24,7 +24,11 @@ const Orders = ({ orders }) => {
           <h2>Please sign in to see your orders</h2>
         )}
 
-        <div className="mt-5 space-y-4"></div>
+        <div className="mt-5 space-y-4">
+          {orders?.map((order) => (
+            <Order />
+          ))}
+        </div>
       </main>
     </div>
   );
