@@ -39,4 +39,6 @@ export async function getServerSideProps(context) {
       props: {},
     };
   }
+
+  const stripeOrders = await stripe.orders.list();
 }
