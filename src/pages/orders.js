@@ -8,8 +8,6 @@ import Order from "../components/Order";
 const Orders = ({ orders }) => {
   const { data: session } = useSession();
 
-  console.log(orders);
-
   return (
     <div>
       <Header />
@@ -85,6 +83,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       orders,
+      session,
     },
   };
 }
