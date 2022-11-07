@@ -15,6 +15,10 @@ This is a rebuilt of the amazon e-commerce, with focus being on exploring Nextjs
 - Fake Store API
 - Heroicons
 
+### Hosted on Vercel
+
+- URL: https://cn-amazon-next.vercel.app/
+
 # Installation Steps
 
 ## Using npm
